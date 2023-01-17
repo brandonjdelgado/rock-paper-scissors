@@ -25,3 +25,25 @@ function getComputerChoice() {
 
   return arr[Math.floor(Math.random() * arr.length)];
 }
+
+function playRound() {
+  let playerSelection = prompt('Choose wisely...');
+  playerSelection = playerSelection.toLowerCase();
+
+  const computerSelection = getComputerChoice();
+  getComputerChoice();
+
+  if (playerSelection === computerSelection) {
+    console.log(`tie! ${playerSelection} ties with ${computerSelection}`);
+  } else if 
+  (playerSelection === 'rock' && computerSelection === 'scissors' ||
+  playerSelection === 'paper' && computerSelection === 'rock' ||
+  playerSelection === 'scissors' && computerSelection === 'paper') {
+    console.log(`win! ${playerSelection} beats ${computerSelection}`)
+    playerScore++;
+  } else {
+    console.log(`lose! ${computerSelection} beats ${playerSelection}`)
+    computerScore++;
+  }
+  console.log(`you: ${playerScore} com: ${computerScore}`);
+}
